@@ -24,9 +24,9 @@ const TodoInput = (props: IProps) => {
   }
 
   const handleOnClick = () => {
-    if (!todo) {
-      alert("Please enter your todo");
-      return;
+    if(!todo) {
+        alert("Please enter your todo");
+        return;
     }
     addNewToDo({
       id: randomInteger(1, 1000000),

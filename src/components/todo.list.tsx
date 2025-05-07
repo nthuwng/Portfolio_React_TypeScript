@@ -32,6 +32,11 @@ const TodoList = () => {
   const addNewToDo = (todo: ITodo) => {
     setListTodo([...listTodo, todo]);
   };
+
+  const handleDeleteTodo = (id: number) => {
+    const newTodos = listTodo.filter((item) => item.id !== id);
+    setListTodo(newTodos);
+  };
   return (
     <div
       style={{
@@ -52,7 +57,13 @@ const TodoList = () => {
       </div>
       <br />
       <TodoInput name="your Todo" addNewToDo={addNewToDo} />
-      <TodoData todos={listTodo} owner={"HoidanIt"} age={21} isDevelop={true} />
+      <TodoData
+        todos={listTodo}
+        owner={"HoidanIt"}
+        age={21}
+        isDevelop={true}
+        handleDeleteTodo={handleDeleteTodo}
+      />
     </div>
   );
 };

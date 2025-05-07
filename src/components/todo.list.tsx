@@ -27,9 +27,11 @@ const TodoList = () => {
   //   },
   // ];
 
-  
   const [listTodo, setListTodo] = useState<ITodo[]>([]);
 
+  const addNewToDo = (todo: ITodo) => {
+    setListTodo([...listTodo, todo]);
+  };
   return (
     <div
       style={{
@@ -49,7 +51,7 @@ const TodoList = () => {
         My todo List:
       </div>
       <br />
-      <TodoInput name="your Todo" />
+      <TodoInput name="your Todo" addNewToDo={addNewToDo} />
       <TodoData todos={listTodo} owner={"HoidanIt"} age={21} isDevelop={true} />
     </div>
   );

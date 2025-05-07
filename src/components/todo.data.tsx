@@ -16,7 +16,9 @@ const TodoData = (props: IProps) => {
       {todos.map((item) => {
         return (
           <div key={item.id}>
-            <div style={{ padding: "10px 0px" }}>{item.title}</div>
+            <div style={{ padding: "10px 0px" }}>
+              {item.id} - {item.title} &nbsp; <button>Delete</button>
+            </div>
           </div>
         );
       })}
